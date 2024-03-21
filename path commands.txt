@@ -1,0 +1,12 @@
+export PATH=$PATH:/usr/share/scala/bin
+export SPARK_HOME=/usr/local/spark
+export PATH=$PATH:$SPARK_HOME/bin
+
+scalac -classpath "$SPARK_HOME/jars/*" task_t1.scala
+
+scala -classpath "$SPARK_HOME/jars/*:." task_t1
+
+
+echo "export SPARK_HOME=/usr/local/spark" >> ~/.bashrc
+echo "export PATH=\$PATH:\$SPARK_HOME/bin" >> ~/.bashrc
+source ~/.bashrc
